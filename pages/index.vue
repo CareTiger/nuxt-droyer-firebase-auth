@@ -1,5 +1,6 @@
 <template>
   <section>
+
     <div>
       <div>
         <nuxt-link to="/protected">Protected</nuxt-link>
@@ -11,6 +12,12 @@
         Unprotected page --- anyone can see this
       </p>
     </div>
+
+      <div class="comments">
+        <h2>comments</h2>
+        <vue-disqus  shortname="sampyl" :identifier="page_id" ></vue-disqus>
+      </div>
+
   </section>
 </template>
 
@@ -29,5 +36,9 @@
 <style>
   a {
     padding: 5px;
+  }
+  .comments {
+    width: 50%;
+    margin-left: 25%;
   }
 </style>

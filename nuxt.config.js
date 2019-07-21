@@ -70,7 +70,7 @@ module.exports = {
     }
   },
 
-  plugins: [],
+  plugins: ['~/plugins/disqus'],
 
   modules: [
     '@nuxtjs/axios'

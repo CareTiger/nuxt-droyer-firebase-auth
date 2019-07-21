@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+
     <div>
       <nuxt-link to="/auth/signin">Already a user? Sign-in</nuxt-link>
     </div>
@@ -11,6 +12,13 @@
         <input id="passwordTxt" type="password" v-model="password">
         <button type="submit">Sign Up</button>
       </form>
+
+
+      <div class="comments">
+        <h2>comments</h2>
+        <vue-disqus  shortname="sampyl" :identifier="signup" ></vue-disqus>
+      </div>
+
     </div>
   </section>
 </template>
