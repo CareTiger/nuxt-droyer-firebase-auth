@@ -27,6 +27,7 @@ export const actions = {
   async login({dispatch, state}, user) {
     console.log('[STORE ACTIONS] - login')
     const token = await firebaseApp.auth().currentUser.getIdToken(true)
+    console.log(user)
     const userInfo = {
       name: user.displayName,
       email: user.email,
@@ -52,6 +53,7 @@ export const actions = {
 
   saveUID({commit}, uid) {
     console.log('[STORE ACTIONS] - saveUID')
+    console.log(uid)
     commit('saveUID', uid)
   },
 

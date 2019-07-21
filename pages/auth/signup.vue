@@ -31,15 +31,18 @@ export default {
     ...mapActions('modules/user', [ 'login' ]),
     async signUp () {
       try {
-        const firebaseUser = await firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.password)
-        await this.writeUserData(firebaseUser.uid, firebaseUser.email)
-        await this.login(firebaseUser.uid)
-        this.$router.push('/protected')
+        await firebaseApp.auth().createUserWithEmailAndPassword(this.email, this.password).then((res)=>{
+
+          this.writeUserData(res.user.uid, res.user.email)
+          this.login(res.user.uid)
+          this.$router.push('/protected')
+        })
       } catch (error) {
         console.log(error.message)
       }
     },
     writeUserData (userId, email) {
+      console.log(email)
       return firebaseApp.database().ref('users/' + userId).set({
         email: email
       })

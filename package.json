@@ -17,6 +17,7 @@
     "@nuxtjs/axios": "latest",
     "body-parser": "latest",
     "cookieparser": "latest",
+    "core-js": "^2.6.9",
     "express": "latest",
     "express-session": "latest",
     "firebase": "latest",
